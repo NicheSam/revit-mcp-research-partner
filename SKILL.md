@@ -16,6 +16,8 @@ Act as a research collaborator and outcome router, not as an automatic MCP Tool 
 
 Do not modify SC REVIT, Revit MCP, BIM Agent, a live model, or company-internal material unless the user separately and explicitly authorizes that mutation.
 
+When the user cannot state the problem precisely, treat their words as a symptom and desired outcome, not as a request for a particular tool. First identify the smallest observable case and offer a useful read-only result: a candidate list, a short workflow map, a comparison table, or a question for the responsible person. Read [references/response-examples.md](references/response-examples.md) when the input is vague or when a concrete user-facing answer is needed.
+
 ## Coordinate With Other Skills
 
 Use this skill as the research entry point and routing layer. It does not need to run the whole lifecycle by itself.
@@ -92,5 +94,7 @@ Read [references/research-output-contract.md](references/research-output-contrac
 Do not stop at classification or high-level advice when the user needs a usable result. For substantial research, also read [references/practical-deliverables.md](references/practical-deliverables.md) and produce at least one case-grounded artifact: an action register, Domain SOP draft, validation matrix, Tool or Issue proposal, review packet, or SVG context/workflow diagram. Each recommendation must name the exact next action, owner, prerequisite, expected result, verification, and stop condition. Trace artifact claims back to evidence; a diagram is a review surface, not additional proof.
 
 When the available evidence includes an Issue, Pull Request, maintainer discussion, existing plugin workflow, or failure record, also read [references/case-based-work-modes.md](references/case-based-work-modes.md). Choose the one mode that best moves the case forward: turn the case into a clear workflow, prepare work for the next owner, choose a boundary and alternative path, or check honestly how far the work has reached. Lead with plain language in user-facing output; introduce technical names only when they identify a specific file, version, field, interface, or verification step.
+
+For a case that needs practical next-step guidance, read [references/case-evidence-patterns.md](references/case-evidence-patterns.md). Reuse the decision pattern, not a case-specific professional term or local workaround. The reference also identifies two reviewable SVG assets that may be adapted when the user needs a workflow or evidence map.
 
 The Skill's output is a research and routing recommendation. It is not end-to-end runtime evidence and does not replace engineering judgment, structural approval, model-change responsibility, or professional signoff.

@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 920" role="img" aria-labelledby="title desc">
+  <title id="title">Revit MCP 研究協作 Skill 的實用產出脈絡</title>
+  <desc id="desc">從可追溯證據、工作流拆解、可審查表示、決策閘點，到 SOP、工具提案、Issue、人工審查與讀回驗證的流程圖。</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7f8fa; }
+      .title { font: 700 30px "Segoe UI", "Microsoft JhengHei", sans-serif; fill: #172033; }
+      .subtitle { font: 400 15px "Segoe UI", "Microsoft JhengHei", sans-serif; fill: #566074; }
+      .section { font: 700 15px "Segoe UI", "Microsoft JhengHei", sans-serif; fill: #334155; letter-spacing: 1px; }
+      .box { fill: #ffffff; stroke: #94a3b8; stroke-width: 2; rx: 12; }
+      .evidence { fill: #eef6ff; stroke: #3b82f6; }
+      .infer { fill: #fff7e8; stroke: #d97706; }
+      .review { fill: #f3efff; stroke: #7c3aed; }
+      .gate { fill: #fff; stroke: #7c3aed; stroke-width: 2.5; }
+      .artifact { fill: #ecfdf5; stroke: #059669; }
+      .stop { fill: #fff1f2; stroke: #e11d48; }
+      .verify { fill: #effcfb; stroke: #0f766e; }
+      .label { font: 700 17px "Segoe UI", "Microsoft JhengHei", sans-serif; fill: #1f2937; }
+      .text { font: 400 14px "Segoe UI", "Microsoft JhengHei", sans-serif; fill: #475569; }
+      .small { font: 400 12px "Segoe UI", "Microsoft JhengHei", sans-serif; fill: #64748b; }
+      .edge { fill: none; stroke: #64748b; stroke-width: 2; marker-end: url(#arrow); }
+      .edge-dash { fill: none; stroke: #d97706; stroke-width: 2; stroke-dasharray: 7 6; marker-end: url(#arrow-orange); }
+      .edge-stop { fill: none; stroke: #e11d48; stroke-width: 2; marker-end: url(#arrow-red); }
+      .edge-verify { fill: none; stroke: #0f766e; stroke-width: 2; marker-end: url(#arrow-teal); }
+      .branch { font: 700 12px "Segoe UI", "Microsoft JhengHei", sans-serif; fill: #475569; }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#64748b"/></marker>
+    <marker id="arrow-orange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#d97706"/></marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#e11d48"/></marker>
+    <marker id="arrow-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#0f766e"/></marker>
+  </defs>
+
+  <rect class="bg" width="1500" height="920"/>
+  <text class="title" x="60" y="58">Revit MCP 研究協作：從研究結論到可使用成果</text>
+  <text class="subtitle" x="60" y="86">此圖定義 Skill 的交付脈絡；圖本身是審查介面，不是工程正確性或實機完成的證據。</text>
+
+  <text class="section" x="60" y="130">1  可追溯證據</text>
+  <rect class="box evidence" x="60" y="150" width="250" height="92"/>
+  <text class="label" x="82" y="180">既有 SOP / 文件</text>
+  <text class="text" x="82" y="207">規則、例外、前置條件</text>
+  <text class="small" x="82" y="229">記錄版本、來源與適用範圍</text>
+
+  <rect class="box evidence" x="60" y="258" width="250" height="92"/>
+  <text class="label" x="82" y="288">程式 / Issue / 失敗紀錄</text>
+  <text class="text" x="82" y="315">介面、行為、反模式、缺口</text>
+  <text class="small" x="82" y="337">分開 implementation 與 runtime</text>
+
+  <rect class="box evidence" x="60" y="366" width="250" height="92"/>
+  <text class="label" x="82" y="396">模型 / 執行 / 讀回</text>
+  <text class="text" x="82" y="423">批次、身分、狀態與副作用</text>
+  <text class="small" x="82" y="445">不同 session 不混成同一證據</text>
+
+  <rect class="box evidence" x="60" y="474" width="250" height="92"/>
+  <text class="label" x="82" y="504">官方 API 資料</text>
+  <text class="text" x="82" y="531">版本、簽章、限制、交易語意</text>
+  <text class="small" x="82" y="553">查不到即標 officially_unverified</text>
+
+  <path class="edge" d="M 310 196 C 350 196, 350 320, 390 320"/>
+  <path class="edge" d="M 310 304 C 350 304, 350 320, 390 320"/>
+  <path class="edge" d="M 310 412 C 350 412, 350 320, 390 320"/>
+  <path class="edge" d="M 310 520 C 360 520, 360 372, 390 372"/>
+
+  <text class="section" x="390" y="130">2  拆解與形成候選</text>
+  <rect class="box infer" x="390" y="150" width="300" height="220"/>
+  <text class="label" x="416" y="184">研究工作台（推論層）</text>
+  <text class="text" x="416" y="218">• 工程規則 vs 情境判斷</text>
+  <text class="text" x="416" y="247">• 確定性操作 vs 模型副作用</text>
+  <text class="text" x="416" y="276">• 自動責任 vs 人工責任</text>
+  <text class="text" x="416" y="305">• 一次驗證一個假設層</text>
+  <text class="text" x="416" y="334">• 產生候選、缺口與停止條件</text>
+  <text class="small" x="416" y="357">虛線表示尚待驗證的推論</text>
+
+  <rect class="box infer" x="390" y="400" width="300" height="166"/>
+  <text class="label" x="416" y="434">建議草案</text>
+  <text class="text" x="416" y="468">Action + Reason + Owner</text>
+  <text class="text" x="416" y="497">Prerequisite + Expected result</text>
+  <text class="text" x="416" y="526">Verification + Stop condition</text>
+  <text class="small" x="416" y="551">沒有上述欄位，就還不是可執行建議</text>
+  <path class="edge-dash" d="M 540 370 L 540 400"/>
+
+  <text class="section" x="770" y="130">3  可審查表示與閘點</text>
+  <rect class="box review" x="770" y="150" width="300" height="124"/>
+  <text class="label" x="796" y="184">預覽 / 表格 / SVG / Review packet</text>
+  <text class="text" x="796" y="218">人能看懂、能否決、能追到 evidence ID</text>
+  <text class="small" x="796" y="249">不把推論包裝成已驗證事實</text>
+  <path class="edge-dash" d="M 690 483 C 735 483, 735 212, 770 212"/>
+
+  <polygon class="gate" points="920,318 1060,398 920,478 780,398"/>
+  <text class="label" x="842" y="382">證據與權責</text>
+  <text class="label" x="856" y="407">足以繼續？</text>
+  <text class="small" x="842" y="432">範圍、身分、授權一致</text>
+  <path class="edge" d="M 920 274 L 920 318"/>
+
+  <rect class="box stop" x="780" y="520" width="280" height="116"/>
+  <text class="label" x="806" y="554">停止 / 補證據 / 人工接管</text>
+  <text class="text" x="806" y="585">缺來源、分支不完整、責任未決</text>
+  <text class="small" x="806" y="612">不得靜默補值或直接進入 mutation</text>
+  <path class="edge-stop" d="M 920 478 L 920 520"/>
+  <text class="branch" x="936" y="502">否</text>
+
+  <text class="section" x="1130" y="130">4  可使用成果</text>
+  <rect class="box artifact" x="1130" y="150" width="310" height="72"/>
+  <text class="label" x="1154" y="181">Domain SOP 草案</text>
+  <text class="text" x="1154" y="205">輸入、階段、狀態、例外、驗證</text>
+
+  <rect class="box artifact" x="1130" y="238" width="310" height="72"/>
+  <text class="label" x="1154" y="269">Tool proposal / GitHub Issue</text>
+  <text class="text" x="1154" y="293">介面契約、錯誤、驗收、非目標</text>
+
+  <rect class="box artifact" x="1130" y="326" width="310" height="72"/>
+  <text class="label" x="1154" y="357">Action register / 驗證矩陣</text>
+  <text class="text" x="1154" y="381">下一步、owner、probe、反證路徑</text>
+
+  <rect class="box artifact" x="1130" y="414" width="310" height="72"/>
+  <text class="label" x="1154" y="445">人工審查包</text>
+  <text class="text" x="1154" y="469">候選、後果、不確定性、明確問題</text>
+
+  <path class="edge" d="M 1060 398 C 1100 398, 1100 186, 1130 186"/>
+  <path class="edge" d="M 1060 398 C 1105 398, 1105 274, 1130 274"/>
+  <path class="edge" d="M 1060 398 L 1130 362"/>
+  <path class="edge" d="M 1060 398 C 1105 398, 1105 450, 1130 450"/>
+  <text class="branch" x="1080" y="385">是，依性質分流</text>
+
+  <rect class="box verify" x="1130" y="535" width="310" height="106"/>
+  <text class="label" x="1154" y="569">執行後獨立讀回</text>
+  <text class="text" x="1154" y="598">同一批次、同一身分、可觀測驗收條件</text>
+  <text class="small" x="1154" y="625">只有被授權執行的路徑才進入此層</text>
+  <path class="edge-verify" d="M 1285 486 L 1285 535"/>
+
+  <rect class="box" x="60" y="720" width="1380" height="140"/>
+  <text class="section" x="88" y="756">圖例與證據限制</text>
+  <rect class="evidence" x="88" y="780" width="22" height="22" rx="4"/><text class="text" x="120" y="797">已記錄來源</text>
+  <rect class="infer" x="268" y="780" width="22" height="22" rx="4"/><text class="text" x="300" y="797">推論 / 提案</text>
+  <rect class="review" x="448" y="780" width="22" height="22" rx="4"/><text class="text" x="480" y="797">人工可審查表示</text>
+  <rect class="artifact" x="668" y="780" width="22" height="22" rx="4"/><text class="text" x="700" y="797">可交付成果</text>
+  <rect class="stop" x="848" y="780" width="22" height="22" rx="4"/><text class="text" x="880" y="797">停止 / 未決</text>
+  <rect class="verify" x="1048" y="780" width="22" height="22" rx="4"/><text class="text" x="1080" y="797">獨立讀回</text>
+  <text class="small" x="88" y="834">可證明：Skill 的研究結果應如何被整理、審查與分流。不可證明：任何特定模型、API、部署或工程判斷已正確完成。</text>
+</svg>
