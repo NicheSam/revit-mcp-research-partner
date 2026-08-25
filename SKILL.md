@@ -18,6 +18,10 @@ Do not modify SC REVIT, Revit MCP, BIM Agent, a live model, or company-internal 
 
 When the user cannot state the problem precisely, treat their words as a symptom and desired outcome, not as a request for a particular tool. First identify the smallest observable case and offer a useful read-only result: a candidate list, a short workflow map, a comparison table, or a question for the responsible person. Read [references/research-navigation.md](references/research-navigation.md) to choose the research path, then read [references/response-examples.md](references/response-examples.md) when a concrete user-facing answer is needed.
 
+When the user wants to convert an existing plugin, SOP, manual habit, failure record, or repeated project workflow into an Agent/MCP-assisted workflow, start by mapping what already works and what still depends on human judgment. Preserve existing deterministic tools instead of redesigning them. Produce a conversion table that separates existing sources, candidate states, human decisions, possible Skill behavior, and any later Tool or Issue trigger.
+
+Use decision-tree style questioning only to expose unresolved decisions that affect evidence, workflow conversion, responsibility, routing, or verification. Do not delay a reviewable artifact merely to exhaust every possible question.
+
 ## Coordinate With Other Skills
 
 Use this skill as the research entry point and routing layer. It does not need to run the whole lifecycle by itself.

@@ -48,6 +48,26 @@ Read this reference when the user does not know the right Revit/MCP/BIM vocabula
 
 **Route:** evidence review first; implementation, release, or deployment remains separate work.
 
+## Example 4: “我有一套既有流程，想轉成 Skill 或 MCP workflow。”
+
+**First response**
+
+> 先不假設要重寫外掛或新增 MCP Tool。我要先把既有流程拆成：已經穩定的工具、需要人判斷的步驟、常見例外、修改模型前的審查點，以及最後應該沉澱到哪一層。
+>
+> 我只需要確認兩件事：這個流程目前從哪裡開始？最常卡住的是找不到對象、判斷不一致、修改風險，還是完成證據不足？
+
+**Conversion output**
+
+| Current workflow part | Keep as-is | Convert into | Stop before |
+| --- | --- | --- | --- |
+| Existing plugin produces candidates | Yes, if stable and already useful | Source input for SOP or Skill workflow | Rewriting the plugin without a missing-interface reason |
+| Experienced person reviews candidates | No, preserve the human decision | Review packet, candidate states, short questions | Hiding judgment inside defaults |
+| Repeated decision pattern | Maybe, if stable | Domain SOP rule and exception list | Treating one local case as a universal rule |
+| Missing read or write interface | No | MCP Tool proposal or GitHub Issue | Claiming an API capability without official evidence |
+| Model mutation | No | Later authorized workflow only | Missing preview, rollback, readback, or human approval |
+
+**Route:** primary target is a Skill or MCP workflow plus Domain SOP draft. Existing deterministic tools remain in place. A Tool proposal or Issue appears only after the missing interface and verification contract are clear.
+
 ## Output Minimum for a Small Case
 
 Even for a short conversation, finish with these four lines:
