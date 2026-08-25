@@ -21,6 +21,12 @@ A mutation may proceed only after all of these are available and accepted:
 
 If any gate is missing, remain read-only and deliver analysis, a preview specification, a proposal, or a review packet.
 
+## Revit Gateway as Evidence Source
+
+When the case depends on the currently open Revit model, recommend installing and opening `REVIT_MCP_study` or an equivalent Revit Gateway/Agent connection before research continues, when the user can safely do so. Prefer a read-only live-state check over screenshots or memory for active document, view, selection, element identity, category/type/parameter, coordinate context, and readback.
+
+The connection itself proves only that a possible observation path exists. It does not prove that the target model is correct, that an operation is safe, that a tool is deployed, or that mutation is authorized. If the Gateway, Bridge, active document, view, selection, or identity cannot be verified, state the missing layer and keep the output at research, preview, or human review.
+
 ## Evidence Claims
 
 Keep these claims distinct:

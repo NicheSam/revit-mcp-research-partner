@@ -111,6 +111,21 @@ Skill 會明確區分不同證據層級：
 使用 revit-mcp-research-partner 幫我整理這個 Revit/MCP 工作流程
 ```
 
+## 建議搭配：先連上 Revit Gateway
+
+如果研究對象牽涉目前開啟的 Revit 模型，建議先安裝並開啟 [`REVIT_MCP_study`](https://github.com/shuotao/REVIT_MCP_study) 或等效的 Revit Gateway / Agent 連線。這不是硬性前提，但會讓互動效果好很多，因為 Skill 可以建議 Agent 直接讀取：
+
+- 目前開啟的 Revit document
+- active view
+- selection
+- element identity
+- category / type / parameter
+- 目前模型狀態與讀回結果
+
+這能減少只靠截圖、印象或口頭描述造成的誤判。尤其當使用者自己也說不清楚問題時，live state read 能先把「我覺得怪怪的」轉成可檢查的候選清單。
+
+但 Gateway 連線只代表多了一個證據來源，不代表已授權修改模型。任何模型 mutation 仍然必須先有 preview、rollback / Undo、independent readback 與人工核准。
+
 ## 使用方式
 
 你不需要一開始就提出完整規格。可以用很模糊的方式開始：
@@ -123,8 +138,9 @@ Skill 應該先做：
 
 1. 檢查你提供的外掛文件、SOP、Issue、PR、模型證據或失敗紀錄。
 2. 不重複問可以從檔案或 repo 查到的資訊。
-3. 只問一到三個會改變方向的問題。
-4. 先產出可審查的小成果，而不是直接提工具。
+3. 若 Revit Gateway / Agent 已連線，優先建議做 read-only live state check。
+4. 只問一到三個會改變方向的問題。
+5. 先產出可審查的小成果，而不是直接提工具。
 
 典型輸出會包含：
 
@@ -271,6 +287,7 @@ assets/
 - 不把 Issue 回覆、commit、測試通過、截圖或 API success 當成讀回驗證或正式部署。
 - 未取得明確同意，不修改 SC REVIT、Revit MCP、BIM Agent、公司內部資料或 live model。
 - 涉及模型 mutation 時，必須先有 preview、rollback / Undo、independent readback 與人工核准。
+- Revit Gateway / Agent 連線是讀取現況與驗證的輔助，不是修改模型的授權。
 - 涉及專業軟體 API 功能研究或實作時，必須查官方資料，不以 Agent 記憶或推測作為依據。
 
 ## 目前狀態
