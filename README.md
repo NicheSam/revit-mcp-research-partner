@@ -14,9 +14,9 @@ It is a research and routing layer. It does not automatically create MCP tools, 
 
 ## Integrated research material
 
-The Skill includes a compact pattern library distilled from selected public `REVIT_MCP_study` Issue and Pull Request interactions. It covers four practical situations: making reviewable candidates before automation, stopping writes when preview is unreliable, preserving a rejected mechanism with an alternative path, and reporting progress as an evidence ladder rather than “done”.
+The Skill includes a compact pattern library plus a nine-case research library distilled from selected public `REVIT_MCP_study` Issue and Pull Request interactions. It covers reviewable candidates before automation, unreliable previews, rejected mechanisms with alternatives, evidence ladders, unreachable knowledge files, unread attachments, oversized handoffs, UI-versus-API boundaries, and cross-host portability.
 
-It also includes response examples for vague user requests and two editable SVG workflow maps. The included research material links back to its public sources and explicitly separates observed evidence from proposals and unverified claims.
+It also includes a navigation guide and response examples for vague user requests, plus three editable SVG workflow maps. The included research material links back to its public sources and explicitly separates observed evidence from proposals and unverified claims.
 
 ## Intended use
 

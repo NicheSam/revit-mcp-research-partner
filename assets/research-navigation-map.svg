@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" role="img" aria-labelledby="title desc">
+  <title id="title">從模糊問題到可交付研究成果</title>
+  <desc id="desc">使用者的模糊問題先轉成症狀與目標，再依不確定性選擇研究路徑，產出可審查的結果並分流或停止。</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.title{font:700 30px "Segoe UI","Microsoft JhengHei",sans-serif;fill:#172033}.sub{font:400 15px "Segoe UI","Microsoft JhengHei",sans-serif;fill:#526075}.h{font:700 15px "Segoe UI","Microsoft JhengHei",sans-serif;fill:#334155;letter-spacing:1px}.label{font:700 17px "Segoe UI","Microsoft JhengHei",sans-serif;fill:#1e293b}.txt{font:400 14px "Segoe UI","Microsoft JhengHei",sans-serif;fill:#475569}.small{font:400 12px "Segoe UI","Microsoft JhengHei",sans-serif;fill:#64748b}.box{stroke-width:2;rx:12}.start{fill:#eef6ff;stroke:#2563eb}.question{fill:#fff7e8;stroke:#d97706}.artifact{fill:#ecfdf5;stroke:#059669}.stop{fill:#fff1f2;stroke:#e11d48}.human{fill:#f4efff;stroke:#7c3aed}.edge{fill:none;stroke:#64748b;stroke-width:2;marker-end:url(#a)}.dash{fill:none;stroke:#d97706;stroke-width:2;stroke-dasharray:7 6;marker-end:url(#ao)}.red{fill:none;stroke:#e11d48;stroke-width:2;marker-end:url(#ar)}
+    </style>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#64748b"/></marker><marker id="ao" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#d97706"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#e11d48"/></marker>
+  </defs>
+  <rect class="bg" width="1440" height="900"/>
+  <text class="title" x="55" y="58">從「我不知道怎麼問」到可交付的研究結果</text><text class="sub" x="55" y="86">先釐清不確定性，再決定要查什麼、交出什麼；這是研究導航，不是模型或 API 已完成的證據。</text>
+  <text class="h" x="55" y="135">1 使用者的情況</text>
+  <rect class="box start" x="55" y="155" width="300" height="105"/><text class="label" x="80" y="190">「有些地方怪怪的」</text><text class="txt" x="80" y="219">先找可辨識的差異與範圍</text><text class="small" x="80" y="243">不先假定要修改模型</text>
+  <rect class="box start" x="55" y="278" width="300" height="105"/><text class="label" x="80" y="313">「能不能自動做？」</text><text class="txt" x="80" y="342">先查既有流程、外掛、SOP 與缺口</text><text class="small" x="80" y="366">不因為有 Agent 就新增工具</text>
+  <rect class="box start" x="55" y="401" width="300" height="105"/><text class="label" x="80" y="436">「PR 過了，能用了嗎？」</text><text class="txt" x="80" y="465">先分開程式、建置、實機與讀回</text><text class="small" x="80" y="489">不把單一證據說成完成</text>
+  <rect class="box start" x="55" y="524" width="300" height="105"/><text class="label" x="80" y="559">「畫面做得到，API 呢？」</text><text class="txt" x="80" y="588">先確認產品、版本與官方資料</text><text class="small" x="80" y="612">不由 UI 推測 API</text>
+  <path class="edge" d="M355 208 C400 208,400 285,445 285"/><path class="edge" d="M355 330 C405 330,405 320,445 320"/><path class="edge" d="M355 453 C400 453,400 355,445 355"/><path class="edge" d="M355 576 C405 576,405 390,445 390"/>
+  <text class="h" x="445" y="135">2 先選研究問題</text>
+  <rect class="box question" x="445" y="155" width="325" height="265"/><text class="label" x="470" y="190">把情況轉成可檢查的問題</text><text class="txt" x="470" y="224">• 項目能否重新找到？</text><text class="txt" x="470" y="253">• 已有什麼作法或來源？</text><text class="txt" x="470" y="282">• 不確定的是規則、版本、責任，還是證據？</text><text class="txt" x="470" y="311">• 最小的唯讀檢查是什麼？</text><text class="txt" x="470" y="340">• 哪兩個問題真的會改變下一步？</text><text class="small" x="470" y="386">先讀附件與既有資料，不重複詢問使用者</text>
+  <rect class="box human" x="445" y="465" width="325" height="132"/><text class="label" x="470" y="500">需要人工決定？</text><text class="txt" x="470" y="530">專業責任、模型修改、例外接受與風險</text><text class="small" x="470" y="564">是：做成可審查資料，不替人決定</text><path class="red" d="M607 420 L607 465"/>
+  <path class="dash" d="M770 285 L815 285"/><text class="h" x="815" y="135">3 交出可用成果</text>
+  <rect class="box artifact" x="815" y="155" width="280" height="96"/><text class="label" x="840" y="190">候選表 / 預覽圖</text><text class="txt" x="840" y="219">供人確認範圍與例外</text>
+  <rect class="box artifact" x="815" y="269" width="280" height="96"/><text class="label" x="840" y="304">證據階梯 / 比較表</text><text class="txt" x="840" y="333">說清楚已知與尚未確認</text>
+  <rect class="box artifact" x="815" y="383" width="280" height="96"/><text class="label" x="840" y="418">SOP / 交接 / Issue 草案</text><text class="txt" x="840" y="447">下一位不用重做研究</text>
+  <rect class="box artifact" x="815" y="497" width="280" height="96"/><text class="label" x="840" y="532">SVG 脈絡圖</text><text class="txt" x="840" y="561">來源、判斷、責任與分流可見</text>
+  <path class="edge" d="M1095 203 C1140 203,1140 214,1180 214"/><path class="edge" d="M1095 317 C1140 317,1140 300,1180 300"/><path class="edge" d="M1095 431 C1140 431,1140 386,1180 386"/><path class="edge" d="M1095 545 C1140 545,1140 472,1180 472"/>
+  <text class="h" x="1180" y="135">4 分流或停止</text>
+  <rect class="box artifact" x="1180" y="155" width="210" height="118"/><text class="label" x="1204" y="190">穩定且可驗證</text><text class="txt" x="1204" y="219">→ SOP 或既有外掛</text><text class="small" x="1204" y="247">需要時才提出介面</text>
+  <rect class="box artifact" x="1180" y="291" width="210" height="118"/><text class="label" x="1204" y="326">仍需找脈絡</text><text class="txt" x="1204" y="355">→ Skill / 研究備忘</text><text class="small" x="1204" y="383">保存不確定性</text>
+  <rect class="box stop" x="1180" y="427" width="210" height="118"/><text class="label" x="1204" y="462">證據或權責不足</text><text class="txt" x="1204" y="491">→ 停止 / 人工審查</text><text class="small" x="1204" y="519">列出重新開始條件</text>
+  <rect x="55" y="705" width="1335" height="130" rx="14" fill="#fff" stroke="#94a3b8" stroke-width="2"/><text class="h" x="82" y="743">每次研究結束前都要能回答</text><text class="txt" x="82" y="777">我們知道什麼？下一步做什麼？誰決定？如何獨立檢查？什麼情況必須停止？</text><text class="small" x="82" y="810">案例庫提供「曾經誤判什麼、如何被證據修正」；它不取代目前案例的官方資料、模型證據或人工責任。</text>
+</svg>
