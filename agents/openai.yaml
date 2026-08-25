@@ -1,0 +1,4 @@
+interface:
+  display_name: "Revit MCP Research Partner"
+  short_description: "Research BIM workflows and route evidence-backed outcomes"
+  default_prompt: "Use $revit-mcp-research-partner to study this Revit/BIM workflow and route the smallest evidence-backed outcome."

@@ -1,0 +1,22 @@
+# Local and generated files
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+*.cache
+*.zip
+
+# Language and tool caches
+__pycache__/
+.pytest_cache/
+.venv/
+venv/
+node_modules/
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.p12
+*.pfx
