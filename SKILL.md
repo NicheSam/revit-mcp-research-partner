@@ -12,13 +12,15 @@ Act as a research collaborator and outcome router, not as an automatic MCP Tool 
 1. Establish the concrete case, requested decision, in-scope systems, and authorization boundary.
 2. Inspect the smallest relevant range of available files, repositories, issues, existing plugins, SOPs, model/readback evidence, and failure records before asking for information. Do not ask the user to repeat facts that can be verified from these sources.
 3. Record source, date or batch when known, and what each item actually proves. Mark missing or contradictory evidence instead of smoothing it over.
-4. Ask only the few questions that change the engineering classification, routing decision, safety boundary, or completion test. Prefer one to three questions per round.
+4. Ask only the few questions that change the engineering classification, routing decision, safety boundary, or completion test. Prefer one or two questions per round; ask a third only when it prevents an unsafe or materially wrong route.
 
 Do not modify SC REVIT, Revit MCP, BIM Agent, a live model, or company-internal material unless the user separately and explicitly authorizes that mutation.
 
 For Revit-model workflow research, recommend installing and opening `REVIT_MCP_study` or an equivalent Revit Gateway/Agent connection when the user can safely do so. A live connection improves the work because the agent can read the active Revit document, view, selection, element identities, and model state directly instead of relying only on screenshots or memory. Treat this as a recommended evidence source, not a prerequisite for every research task and not authorization to mutate the model.
 
-When the user cannot state the problem precisely, treat their words as a symptom and desired outcome, not as a request for a particular tool. First identify the smallest observable case and offer a useful read-only result: a candidate list, a short workflow map, a comparison table, or a question for the responsible person. Read [references/research-navigation.md](references/research-navigation.md) to choose the research path, then read [references/response-examples.md](references/response-examples.md) when a concrete user-facing answer is needed.
+When the user cannot state the problem precisely, treat their words as a symptom and desired outcome, not as a request for a particular tool. First identify the smallest observable case and offer a useful read-only result: a candidate list, a short workflow map, a comparison table, or a question for the responsible person. Read [references/research-navigation.md](references/research-navigation.md) to choose both the research path and the lightest safe depth, then read [references/response-examples.md](references/response-examples.md) when a concrete user-facing answer is needed.
+
+Use a fast path for a bounded read-only question with reliable sources, a standard path for workflow conversion or unresolved rules, and a strict path when mutation, shared or changing state, cross-version behavior, or professional authority can change the outcome. Do not run a full evidence inventory when one narrow check can answer the decision. A shorter path must still state what the evidence does not prove and the condition that would require escalation.
 
 When the user wants to convert an existing plugin, SOP, manual habit, failure record, or repeated project workflow into an Agent/MCP-assisted workflow, start by mapping what already works and what still depends on human judgment. Preserve existing deterministic tools instead of redesigning them. Produce a conversion table that separates existing sources, candidate states, human decisions, possible Skill behavior, and any later Tool or Issue trigger.
 
@@ -81,7 +83,7 @@ Common routing principles:
 
 ## Preserve Safety and Evidence Boundaries
 
-Read [references/revit-mcp-boundaries.md](references/revit-mcp-boundaries.md) whenever the case involves model mutation, deployment claims, engineering correctness, cross-discipline approval, or conflicting evidence.
+Read [references/revit-mcp-boundaries.md](references/revit-mcp-boundaries.md) whenever the case involves model mutation, deployment claims, engineering correctness, cross-discipline approval, conflicting evidence, an unobservable state that may affect the conclusion, or a shared state that may change during the work.
 
 Never claim that an Agent is faster than a skilled Revit operator without a comparable benchmark. Never treat an Issue reply, commit, passing test, screenshot, API success, or successful command as proof of deployment, live-model correctness, independent readback, or professional approval.
 
@@ -89,7 +91,7 @@ For any proposed model mutation, require all four gates before execution: review
 
 ## Produce Each Research Round
 
-Read [references/research-output-contract.md](references/research-output-contract.md) before presenting findings. Keep the response proportional to the case, but always expose:
+Read [references/research-output-contract.md](references/research-output-contract.md) before presenting findings and use the chosen depth. For a fast case, expose only the narrow finding, its source or read-only observation, what it does not prove, and a next action or stop condition when needed. For a standard or strict case, expose:
 
 - the research question and scope;
 - known evidence and its actual level;

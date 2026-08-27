@@ -1,6 +1,16 @@
 # Research Output Contract
 
-Use this contract for every research round. Compress sections when the case is small, but do not hide absent evidence or approval gates.
+Use this contract at the depth required by the research route. A fast round may compress the contract to a finding, evidence limit, and next action or stop condition. A standard round should expose the workflow conversion and main uncertainty. A strict or substantial round should use the full contract. Shorter output must not hide absent evidence, stale state, or approval gates.
+
+## Choose Output Depth
+
+| Depth | Minimum visible output |
+| --- | --- |
+| **Fast** | Narrow finding; source or read-only observation; what it does not prove; next action or stop condition if needed |
+| **Standard** | Research question; existing-workflow or source map; rule/judgment split; main evidence gap; primary route; smallest useful artifact; at most two decision-changing questions |
+| **Strict** | Full evidence ledger; ownership and safety gates; environment/version contract when relevant; artifact manifest; validation; stop conditions; next human decision |
+
+If a fast or standard check reveals higher risk or insufficient observability, reclassify the current decision before continuing. Do not expand a short answer merely to reproduce headings.
 
 ## 1. Research Question and Scope
 
@@ -28,6 +38,14 @@ Use one or more explicit levels rather than collapsing them into “done”:
 - **Professional approval:** the responsible person or discipline accepted the result within a stated scope.
 
 Keep different revisions, models, sessions, screenshots, and batches separate. An item may support multiple levels only when the traceability is explicit.
+
+Do not assume the organization already has a clean knowledge base. When inputs are fragmented or informal, preserve their status before extracting rules:
+
+| Input statement | Source | Status | Conflict or gap | Next treatment |
+| --- | --- | --- | --- | --- |
+|  | raw record / observed practice / document / implementation / model observation | verified fact / unverified inference / disputed rule / decision needed |  | retain / verify / compare / ask owner |
+
+An informal habit can be valid recorded evidence without being a validated rule. Retrieval or indexing may help at scale, but it is not a prerequisite for beginning the research.
 
 When API capability or implementation behavior is part of the claim, add the official source check:
 
@@ -67,6 +85,9 @@ Apply only the checks that change the decision. Do not turn these into a glossar
 | Preview side effects | Does the review mechanism avoid persistent model pollution unless explicitly accepted? |
 | Same-run provenance | Are response, raw detail, transaction result, and readback tied to the same run when used together? |
 | Human authority | Is any decision still owned by a responsible person or discipline rather than the Agent, plugin, or issue tracker? |
+| Observable-state sufficiency | Does the evidence expose the state that could overturn the conclusion, or is a property, log, or screenshot standing in for it? |
+| Guarantee level | Is a process requirement being confused with a tool promise, runtime enforcement, or observed result? |
+| Shared-state validity | Is the reviewed identity, ownership, and state still current, and are conflicts and recovery defined? |
 
 ## 5. Key Judgment and Routing
 
@@ -111,9 +132,14 @@ Validate the artifact itself as well as the underlying claim. A workflow or cont
 For skill behavior reviews, use scenario families rather than keyword checks:
 
 - a general Revit question should not trigger this research workflow;
+- a bounded read-only question with reliable evidence should take the fast path instead of producing the full contract;
 - a broad workflow research question should stay in this skill until a bounded subtask appears;
+- fragmented documents and oral practices should be preserved as raw records, facts, inferences, conflicts, and human decisions rather than rejected for lacking a knowledge base;
+- a conclusion that depends on an unobserved state should request the smallest read-only probe rather than infer from adjacent properties;
 - an API capability question should require official product/version documentation and stop when unavailable;
+- a multi-version claim should compare the requested versions, while a single-version claim should not create an unnecessary compatibility catalog;
 - a proposed model mutation without preview, rollback, readback, or human approval should stop before execution;
+- a mutation in shared or changing state should stop when ownership, writability, conflict impact, or recovery is unresolved;
 - a successful sample should remain sample-scoped until wider coverage is evidenced;
 - an implementation request should not inherit research authorization for deployment, issue creation, or model mutation.
 
@@ -122,8 +148,10 @@ For skill behavior reviews, use scenario families rather than keyword checks:
 List conditions that require refusal, pause, rollback, or handoff. End with the smallest decision the responsible human must make next. Typical stop conditions include:
 
 - active document, view, level, selection, link transform, unit, host, or identity is unresolved;
+- the state needed to support the conclusion cannot be observed with the available evidence;
 - preview differs from the expected geometry or creates persistent artifacts;
 - rollback or independent readback is unavailable;
+- ownership, writability, concurrent change impact, or conflict recovery is unresolved;
 - source evidence conflicts or belongs to different batches;
 - official API evidence is unavailable for a capability or implementation claim;
 - confidence is below the stated threshold;

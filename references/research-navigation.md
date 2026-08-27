@@ -27,10 +27,22 @@ If the user cannot supply a detail, inspect the available files, repository, Iss
 | “I have a large idea or a large PR.” | What is the smallest independently reviewable outcome? | Work slices with order, owner, and proof for each | Ask one reviewer to accept an entangled bundle |
 | “I made a spec, but no one has acted on it.” | Has every supplied source and attachment actually been read? | Source coverage table and corrected research question | Repeatedly ask for information already present |
 
+## Choose the Lightest Safe Depth
+
+Choose depth by uncertainty, possible impact, and the evidence needed for the decision. Do not make every request pay the cost of the full research loop.
+
+| Depth | Choose when | First-round output | Escalate when |
+| --- | --- | --- | --- |
+| **Fast** | The question is bounded and read-only, identities and sources are reliable, and no professional decision is being delegated | One narrow check, a direct answer, its evidence limit, and one next action or stop condition | The result depends on an unobserved state, conflicting source, changing identity, or broader claim |
+| **Standard** | An existing workflow, habit, plugin, SOP, or failure record must be converted; rules or exceptions are not yet stable | A workflow/conversion table, the main uncertainty, and at most two decision-changing questions | Mutation, shared state, version-dependent behavior, or professional authority becomes material |
+| **Strict** | Persistent change, shared or changing state, cross-version capability, large batch, irreversible consequence, or authority boundary can affect the outcome | Evidence ledger, safety and ownership gates, validation plan, stop conditions, and a reviewable artifact | Remain stopped until missing evidence, enforceable protection, or human authority is available |
+
+Start with the lowest depth that can support the requested decision. Escalation is one-way for the current decision: discovering higher risk invalidates the shorter route, but a strict path may return to a smaller bounded question after the risky scope is removed.
+
 ## The Research Loop
 
 1. **Find what already exists.** Search the smallest relevant source range before designing a replacement.
-2. **Name the uncertainty.** Classify it as identity/state, rule/exception, capability/version, responsibility, or evidence level. One round should reduce one main uncertainty.
+2. **Name the uncertainty.** Classify it as identity/state, observability, rule/exception, capability/version, shared ownership, responsibility, or evidence level. One round should reduce one main uncertainty.
 3. **Choose a reversible check.** Prefer reading, comparison, preview, a small prototype, or documentation verification before a persistent change.
 4. **Make the result reviewable.** Use a table, short SOP draft, evidence ladder, Issue draft, or SVG. A person must be able to reject the interpretation.
 5. **Route or stop.** State the next owner, proof required, and condition that returns the work to research or human review.
@@ -39,14 +51,20 @@ Do not skip from step 1 to a proposed Tool. The value of the Skill is often disc
 
 ## Default Reply Shape
 
-For a small unclear case, reply in ordinary language with:
+For a fast case, reply in ordinary language with:
+
+1. **Answer or current finding** — tied to the narrow source or read-only observation.
+2. **Evidence limit** — what the check does not prove.
+3. **Next action or stop condition** — only if one is needed.
+
+For a small unclear standard case, reply with:
 
 1. **What I can check now** — named sources or a read-only observation.
 2. **What this will tell us** — the decision it can change.
 3. **What I need from you, if anything** — no more than two decision-changing questions.
 4. **What you will receive next** — one concrete artifact and its limit.
 
-For a substantial case, attach the artifact and finish with the owner, verification, and stop condition from the output contract.
+For a strict or substantial case, attach the artifact and finish with the owner, verification, and stop condition from the output contract.
 
 ## Visual Map
 

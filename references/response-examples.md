@@ -68,9 +68,56 @@ Read this reference when the user does not know the right Revit/MCP/BIM vocabula
 
 **Route:** primary target is a Skill or MCP workflow plus Domain SOP draft. Existing deterministic tools remain in place. A Tool proposal or Issue appears only after the missing interface and verification contract are clear.
 
-## Output Minimum for a Small Case
+## Example 5: “這兩個項目資料不一樣，幫我看一下就好。”
 
-Even for a short conversation, finish with these four lines:
+**Fast-path response**
+
+> 我先做一次只讀比較，不展開整個專案研究。若目前模型連線可用，我會用指定的兩個身份讀取同一批狀態；否則使用你已提供的紀錄。
+>
+> 這次結果只回答「兩者目前差在哪裡」，不證明哪一個一定正確，也不修改模型。
+
+**Compact output**
+
+| Finding | Evidence limit | Next action or stop condition |
+| --- | --- | --- |
+| The two identified items differ in one recorded value in the same read-only batch | This does not establish intended design or wider model coverage | Stop if comparison was the only request; escalate only if the user wants cause, correction, or broader coverage |
+
+## Example 6: “流程都在大家習慣裡，沒有完整 SOP，也能整理嗎？”
+
+**Standard-path response**
+
+> 可以先整理，不需要等知識庫完整。我會把口述習慣、現有文件、實際操作和失敗紀錄分開，先標示哪些是紀錄、哪些已查證、哪些互相矛盾、哪些仍要由負責人決定。
+>
+> 第一輪會先交付流程骨架與證據缺口。我只需要知道目前流程從哪個動作開始，以及哪個例外最常讓人停下來。
+
+**First artifact**
+
+| Input | Current status | How it may be used | Stop before |
+| --- | --- | --- | --- |
+| Repeated oral habit | Recorded practice, not yet a rule | Candidate SOP step to compare against real cases | Calling it a company standard |
+| Existing operation | Observable workflow evidence | Preserve stable steps and identify human decisions | Replacing a working tool without a demonstrated gap |
+| Conflicting explanations | Unresolved | Review question for the responsible owner | Hiding the conflict inside a default |
+
+## Example 7: “不用問了，直接把這批改掉。”
+
+**Strict-path response**
+
+> 目前不能直接執行。要求中的「可以復原」如果只寫在對話或 SOP 裡，並不代表執行端真的有失敗隔離與恢復能力。這一輪先確認修改對象、目前是否可修改、是否有其他工作會受影響，以及執行端能否提供預覽、實際復原邊界和獨立讀回。
+
+**Gate output**
+
+| Gate | Required evidence | Stop condition |
+| --- | --- | --- |
+| Reviewed state | Stable identities and a preview tied to the current batch | Identity, ownership, or state changed after review |
+| Enforceable recovery | Tool or runtime evidence showing the actual failure and recovery boundary | Recovery exists only as a prompt instruction |
+| Shared-state impact | Current writability, affected participants, conflict and recovery plan | Ownership or concurrent impact is unresolved |
+| Authorization | Explicit approval for the stated model and batch | Approval is general, stale, or for a different scope |
+
+**Route:** remain at review packet or implementation contract until every required gate is supported. The Skill does not manufacture runtime protection by wording it more strongly.
+
+## Output Minimum by Depth
+
+For a fast case, finish with the finding, its evidence limit, and a next action or stop condition only when needed. For a small standard case, use these four lines:
 
 1. **What we know:** source-backed facts and their limit.
 2. **What happens next:** one bounded action or artifact.
