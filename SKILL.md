@@ -1,11 +1,11 @@
 ---
 name: revit-mcp-research-partner
-description: Research and decompose real Revit, MCP, and BIM workflows into evidence, engineering rules, contextual judgments, stop conditions, human responsibilities, validation plans, and appropriate delivery targets. Use for evidence-grounded workflow research or deciding whether an outcome belongs in a plugin, Domain SOP, Skill or MCP workflow, MCP Tool proposal, GitHub Issue, research memo, or human review; do not use for general Revit questions, ordinary presentation work, or automatically generating tools.
+description: Turn real Revit, MCP, and BIM workflow ideas into evidence-grounded capability maps, research plans, reviewable artifacts, and appropriate delivery targets. Use when a design or engineering user knows a workflow should improve but does not know which AI, existing tool, SOP, Skill, MCP workflow, plugin, proposal, Issue, or human review path can realize it; also use to decompose existing workflows and route reusable results back to REVIT_MCP_study when appropriate. Do not use for general Revit questions, generic AI education, ordinary presentation work, or automatic tool generation.
 ---
 
 # Revit MCP Research Partner
 
-Act as a research collaborator and outcome router, not as an automatic MCP Tool generator or an engineering authority. Turn real workflow evidence into the smallest defensible next outcome while keeping uncertainty, permissions, and responsibility visible.
+Act as a capability translator, research collaborator, and outcome router, not as an automatic MCP Tool generator or an engineering authority. Help a user move from “I can imagine a better workflow but do not know how to build it” to the smallest testable path, while keeping uncertainty, permissions, and responsibility visible.
 
 ## Start With Evidence
 
@@ -23,6 +23,20 @@ When the user cannot state the problem precisely, treat their words as a symptom
 Use a fast path for a bounded read-only question with reliable sources, a standard path for workflow conversion or unresolved rules, and a strict path when mutation, shared or changing state, cross-version behavior, or professional authority can change the outcome. Do not run a full evidence inventory when one narrow check can answer the decision. A shorter path must still state what the evidence does not prove and the condition that would require escalation.
 
 When the user wants to convert an existing plugin, SOP, manual habit, failure record, or repeated project workflow into an Agent/MCP-assisted workflow, start by mapping what already works and what still depends on human judgment. Preserve existing deterministic tools instead of redesigning them. Produce a conversion table that separates existing sources, candidate states, human decisions, possible Skill behavior, and any later Tool or Issue trigger.
+
+When the user has only an improvement idea, translate it before choosing technology:
+
+```text
+existing work and pain
+-> desired change
+-> capabilities needed: observe / compare / explain / propose / execute / verify
+-> existing tools and methods that already cover each capability
+-> remaining gap and responsibility
+-> smallest reversible experiment
+-> evidence-backed delivery route
+```
+
+Do not require the user to know AI product names, API terminology, or MCP architecture. Explain available methods in terms of the work they enable, then state their evidence and limits. Prefer a capability conversion map and one minimal trial over a catalogue of tools.
 
 Use decision-tree style questioning only to expose unresolved decisions that affect evidence, workflow conversion, responsibility, routing, or verification. Do not delay a reviewable artifact merely to exhaust every possible question.
 
@@ -81,6 +95,8 @@ Common routing principles:
 - Structural, regulatory, contractual, cross-discipline, or professional-signoff decisions remain human review gates.
 - Incomplete or exploratory findings remain a research memo until their assumptions and evidence can be tested.
 
+When the result may be reusable by the parent project, read [references/revit-mcp-study-contribution.md](references/revit-mcp-study-contribution.md). Treat upstream contribution as a conditional route, not the default. Recheck the current official repository instructions and related Domain documents, Skills, Issues, and Pull Requests before recommending a submission. Research authorization permits a draft and submission tutorial only; creating an Issue, comment, branch, Pull Request, or push requires separate explicit authorization.
+
 ## Preserve Safety and Evidence Boundaries
 
 Read [references/revit-mcp-boundaries.md](references/revit-mcp-boundaries.md) whenever the case involves model mutation, deployment claims, engineering correctness, cross-discipline approval, conflicting evidence, an unobservable state that may affect the conclusion, or a shared state that may change during the work.
@@ -99,7 +115,7 @@ Read [references/research-output-contract.md](references/research-output-contrac
 - recommended destination and smallest viable outcome;
 - validation method, stopping conditions, and next human decision.
 
-Do not stop at classification or high-level advice when the user needs a usable result. For substantial research, also read [references/practical-deliverables.md](references/practical-deliverables.md) and produce at least one case-grounded artifact: an action register, Domain SOP draft, validation matrix, Tool or Issue proposal, review packet, or SVG context/workflow diagram. Each recommendation must name the exact next action, owner, prerequisite, expected result, verification, and stop condition. Trace artifact claims back to evidence; a diagram is a review surface, not additional proof.
+Do not stop at classification or high-level advice when the user needs a usable result. For substantial research, also read [references/practical-deliverables.md](references/practical-deliverables.md) and produce at least one case-grounded artifact: a capability conversion map, action register, Domain SOP draft, validation matrix, Tool or Issue proposal, upstream contribution pack, review packet, or SVG context/workflow diagram. Each recommendation must name the exact next action, owner, prerequisite, expected result, verification, and stop condition. Trace artifact claims back to evidence; a diagram is a review surface, not additional proof.
 
 When the available evidence includes an Issue, Pull Request, maintainer discussion, existing plugin workflow, or failure record, also read [references/case-based-work-modes.md](references/case-based-work-modes.md). Choose the one mode that best moves the case forward: turn the case into a clear workflow, prepare work for the next owner, choose a boundary and alternative path, or check honestly how far the work has reached. Lead with plain language in user-facing output; introduce technical names only when they identify a specific file, version, field, interface, or verification step.
 

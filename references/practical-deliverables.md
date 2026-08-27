@@ -17,6 +17,8 @@ Write the recommendation in the user's working language first. Prefer “what we
 | What must a responsible person decide? | Review packet | Candidates, evidence, uncertainty, consequence, explicit question, approval scope |
 | How do sources, decisions, gates, and destinations relate? | SVG context or workflow diagram | Traceable nodes, complete branches, human gates, stop states, output destinations |
 | What uncertainty should be tested first? | Validation matrix | Claim, probe, expected observation, contrary observation, evidence level, next route |
+| I have an improvement idea but do not know what can realize it | Capability conversion map | Current work, desired change, needed capabilities, existing coverage, gap, smallest trial |
+| Is this ready to give back to REVIT_MCP_study? | Upstream contribution pack | Fit, current rules checked, duplicate search, public-safe evidence, target, draft, validation, limits, submission boundary |
 
 When several deliverables are useful, choose one primary artifact and only the dependent artifacts needed to make it actionable. Do not generate a bundle of empty templates.
 
@@ -95,6 +97,21 @@ Use a validation matrix when several assumptions could fail independently:
 | --- | --- | --- | --- | --- | --- |
 
 Test one hypothesis layer at a time. Prefer a read-only local sample before broad automation. Do not promote a successful sample beyond its stated coverage.
+
+## Upstream Contribution Pack
+
+Use this only when local research suggests a reusable outcome for `REVIT_MCP_study`. Follow [revit-mcp-study-contribution.md](revit-mcp-study-contribution.md) and include:
+
+1. **Why it fits:** the repeatable problem and who benefits; distinguish a local success from broader evidence.
+2. **Current rules checked:** official repository sources, check date or revision, and any maintainer exception.
+3. **Related-work search:** overlapping Domain documents, Skills, Issues, Pull Requests, and Discussions; explain extension versus duplication.
+4. **Public-safe evidence:** sanitized sources and reproduction, with private model, company, client, and credential material removed.
+5. **Recommended target:** Issue, knowledge/Domain contribution, Skill contribution, Discussion, or no upstream action.
+6. **Draft package:** suggested title and body, proposed files or scope, acceptance criteria, validation already performed, limitations, and explicit maintainer questions.
+7. **Submission tutorial:** exact GitHub UI steps and, only when useful, optional Git/`gh` steps based on the current contribution guide.
+8. **Authorization stop:** show what is prepared and stop before posting, commenting, pushing, or opening a Pull Request unless the user separately authorizes that external action.
+
+The pack should make contribution easier without pretending the maintainer will accept it. If the official rules are unavailable or contradictory, prepare a question for maintainers rather than guessing the route.
 
 ## Final Artifact QA
 

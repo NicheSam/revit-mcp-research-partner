@@ -20,6 +20,7 @@ If the user cannot supply a detail, inspect the available files, repository, Iss
 | What the user may say | First thing to find out | First useful output | Do not do yet |
 | --- | --- | --- | --- |
 | “Something in the model looks wrong.” | Which items differ, and can they be identified again? | Read-only candidate table plus a short map | Change the model or assume the normal pattern is correct |
+| “I know this workflow could be better, but I do not know what AI or tool to use.” | What work happens now, what change the user wants, and which capability is missing? | Capability conversion map plus one smallest reversible trial | Teach a catalogue of products or jump to a new Tool |
 | “Can this be automated?” | Is there already a manual method, plugin, SOP, or interface that covers part of it? | Existing-capability map and the remaining gap | Propose a new tool because the word “Agent” was used |
 | “This looks finished; can I use it?” | Which proof level exists: code, build, host run, readback, or matching-case coverage? | Evidence ladder with missing checks | Treat a PR, screenshot, or successful response as completion |
 | “The screen can do it; can an API do it?” | Exact product/version and official API contract | Official-source check and a bounded capability answer | Guess an API or translate a UI action into an API claim |
@@ -48,6 +49,25 @@ Start with the lowest depth that can support the requested decision. Escalation 
 5. **Route or stop.** State the next owner, proof required, and condition that returns the work to research or human review.
 
 Do not skip from step 1 to a proposed Tool. The value of the Skill is often discovering that the best next result is a clarified scope, a missing source, an existing capability, or a preserved negative conclusion.
+
+## Capability Translation for a User Without a Technical Plan
+
+Translate the work before naming a product:
+
+| Current work | Desired change | Needed capability | Existing coverage | Gap or human decision | Smallest trial |
+| --- | --- | --- | --- | --- | --- |
+| What the person, plugin, document, or model does now | What should become easier, clearer, safer, or repeatable | observe / compare / explain / propose / execute / verify | Existing plugin, SOP, Gateway read, repository method, or official API | Missing interface, missing evidence, exception, authority, or unsafe state | One read-only sample, comparison, preview, draft, or disposable prototype |
+
+Use capability words as a temporary bridge, not a glossary the user must learn. If the need is “understand why cases differ,” first test observation and comparison; do not assume execution is required. If an existing method covers the stable operation, preserve it and add Agent help only around evidence, explanation, exceptions, or handoff.
+
+After the trial, route the learning based on evidence:
+
+```text
+local evidence only -> keep as local research or SOP draft
+reusable and verified -> assess REVIT_MCP_study upstream fit
+clear missing repository capability -> prepare an Issue-first contribution pack
+professional or private decision -> keep human-owned and do not upstream
+```
 
 ## Default Reply Shape
 

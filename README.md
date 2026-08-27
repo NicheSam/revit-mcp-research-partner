@@ -1,6 +1,6 @@
 # Revit MCP Research Partner
 
-`revit-mcp-research-partner` 是一個 Codex Skill，用來協助研究與整理真實的 Revit / MCP / BIM 工作流程。它的重點不是自動產生 MCP Tool，而是把既有外掛、人工流程、Domain SOP、Issue / PR 討論、模型證據與失敗紀錄，轉換成可審查、可交接、可驗證的下一步。
+`revit-mcp-research-partner` 是一個 Codex Skill，用來協助設計與工程使用者，把「我知道工作可以改善，但不知道 AI、工具或方法怎麼選」轉成可測試的實作路徑。它的重點不是自動產生 MCP Tool，而是把既有外掛、人工流程、Domain SOP、Issue / PR 討論、模型證據與失敗紀錄，轉換成能力地圖、最小試驗，以及可審查、可交接、可驗證的下一步。
 
 這個 Skill 適合處理這類問題：
 
@@ -9,6 +9,7 @@
 - 「這個 Issue / PR / 測試紀錄到底證明到哪一層？」
 - 「這個工作應該做成外掛、Domain SOP、MCP Tool proposal、GitHub Issue，還是先人工審查？」
 - 「使用者自己也說不清楚問題，只知道某個 BIM 工作流程常常卡住。」
+- 「我有一個改善想法，但不知道 AI 可以幫我看、比、解釋、執行，還是驗證哪一段。」
 
 它不適合當作一般 Revit 問答、專業簽認工具、結構或法規判斷代理人，也不會把所有需求都推向 MCP Tool 化。
 
@@ -34,6 +35,10 @@
 -> 判斷成果應該回到哪一層
 -> 定義驗證方法與停止條件
 ```
+
+它扮演的是「能力翻譯橋梁」：使用者不需要先學會 Agent、API 或 MCP 的名詞，而是先描述現在怎麼做、哪裡卡住、希望變成什麼。Skill 再把需求翻譯成「看見現況、比較差異、解釋原因、提出方案、執行操作、驗證結果」等能力，檢查既有方法已經能做哪些部分，最後只測剩下的缺口。
+
+這個想法類似設計教育中的提醒：不要讓不熟悉建模工具限制設計。差別是，在 AI 時代不必先投入大量時間學完整套工具，才能開始驗證構想；可以先讓 AI 協助查證方法、建立小型試驗、解釋限制，再由使用者逐步學會如何改造自己的工作。這裡的「用 AI 學 AI」不是讓 Agent 代替專業判斷，而是用真實工作與可驗證成果作為學習介面。
 
 最後的結果可能是：
 
@@ -95,7 +100,7 @@ Skill 會明確區分不同證據層級：
 - UI 能做到不代表公開 API 支援。
 - 跨系統移植需要重新確認身份、單位、版本與能力邊界。
 
-這個 repo 不是 `REVIT_MCP_study` 的官方組件，也不代表該專案維護者立場。它的用途是把公開互動中值得複用的研究方法整理成 Codex Skill，方便後續把案例轉成 SOP、Issue、proposal 或人工審查包。
+這個 repo 不是 `REVIT_MCP_study` 的官方組件，也不代表該專案維護者立場。它的用途是把公開互動中值得複用的研究方法整理成 Codex Skill，方便後續把案例轉成 SOP、Issue、proposal 或人工審查包；當成果已驗證、可公開且符合母專案範圍時，再協助準備回饋母專案的貢獻包。
 
 ## 安裝方式
 
@@ -151,6 +156,20 @@ Skill 應該先做：
 - 最小可行成果
 - 驗證方法
 - 停止條件
+
+若你只有一個模糊想法，也可以直接說：
+
+```text
+我覺得這個流程應該可以改善，但不知道 AI 可以怎麼幫，也不知道要做成什麼。
+```
+
+第一輪不會丟給你一串產品名稱，而會產出：
+
+| 現在怎麼做 | 想改變什麼 | 需要的能力 | 已有方法 | 尚缺什麼 | 最小試驗 |
+| --- | --- | --- | --- | --- | --- |
+| 人、外掛或文件目前的流程 | 想減少的耗力、誤判或不確定 | 看見、比較、解釋、提出、執行、驗證 | 現有外掛、SOP、Gateway、官方 API 或人工判斷 | 介面、證據、例外或責任 | 一個只讀樣本、比較表、預覽、草案或拋棄式原型 |
+
+這張表的目的不是替你選最流行的 AI，而是找出「下一個最便宜、可推翻、能真正增加理解的測試」。
 
 ## 三種研究深度
 
@@ -274,6 +293,46 @@ officially_unverified
 
 並停止在研究或 Issue proposal，不應直接進入實作。
 
+## 從工作構想到母專案回饋
+
+Skill 的原始目的仍然包含回饋 [`REVIT_MCP_study`](https://github.com/shuotao/REVIT_MCP_study)，但不是每個成果都適合提交。它會先完成本地研究，再檢查四件事：
+
+1. 結果是否不只適用單一私有模型或公司習慣。
+2. 驗證證據是否足以支撐要提出的範圍。
+3. 是否能安全公開，且沒有客戶、公司、模型、憑證或授權受限資料。
+4. 是否已搜尋母專案現有 Domain 文件、Skills、Issues、Pull Requests 與 Discussions，確認不是重複工作。
+
+![從工作構想到 REVIT_MCP_study 回饋的研究循環](assets/idea-to-upstream-feedback-loop.svg)
+
+這張圖是交付與決策脈絡，不是任何 API、功能完成、模型安全或母專案接受的證明。
+
+### 如何判斷要走哪一條路
+
+| 研究成果 | 可能的回饋方式 | 送出前至少要有 |
+| --- | --- | --- |
+| 已驗證、可重複的人工作法 | 目前貢獻指南允許的知識 / Domain 路徑 | 觸發條件、步驟、例外、驗證、適用限制 |
+| 可重用的 Agent 協作方法 | Skill 貢獻候選 | 獨立觸發、輸出契約、停止條件、情境測試、既有工具相容性 |
+| 明確缺少介面、發現缺陷或建議核心程式變更 | Issue-first，除非當前規則或維護者明確允許其他方式 | repo / 版本、案例或重現、證據、預期結果、驗收條件、排除項目 |
+| 問題、展示或早期想法 | 母專案目前指定的 Discussion 或社群路徑 | 已嘗試內容、目前證據、希望維護者回答的決定 |
+| 私有、單一案例、仍有爭議或證據不足 | 不上游，留在本地研究 / SOP / 人工審查 | 清楚的停止原因與重新評估條件 |
+
+截至 **2026-08-27** 查閱的 [`CONTRIBUTING.md`](https://github.com/shuotao/REVIT_MCP_study/blob/main/CONTRIBUTING.md) 顯示，外部貢獻者的可驗證工作流程可走知識 / `domain/` 路徑，外部 fork 對核心程式的建議原則上先發 Issue；README 也把問題與展示導向 Discussions。這只是本次檢查快照，不是永久規則。Skill 每次準備貢獻都必須重新讀取最新 README、`CONTRIBUTING.md`、模板、repository instructions 與相關討論；若維護者對特定案例給了明確例外，則保留該連結並只在授權範圍內遵循。
+
+### Skill 會怎麼教你準備提交
+
+Skill 會產出一份 upstream contribution pack：
+
+- 為何適合母專案，以及目前證據只證明到哪裡。
+- 剛查閱的官方規則、日期或 revision。
+- 相關 Domain / Skill / Issue / PR / Discussion 與重複性判斷。
+- 建議路徑、標題、本文、檔案範圍、驗收條件、限制與維護者問題。
+- 已移除私有資訊的證據與重現步驟。
+- GitHub 網頁操作步驟，以及情境適合時的 Git / `gh` 操作建議。
+
+網頁提交的基本流程是：先搜尋 open / closed 紀錄，選擇當前模板或分類，貼入經審查的草稿，檢查連結與敏感資訊，最後停在提交按鈕前。若是 fork 貢獻，則先確認外部貢獻者可修改的路徑，再建立單一目的分支、執行官方要求的驗證、檢查 diff 與敏感資訊，最後準備 PR 草稿。
+
+研究、草稿與教學不等於外部提交授權。建立 Issue、留言、push 或開 Pull Request 前，仍需使用者另外明確同意。完整規則在 [`references/revit-mcp-study-contribution.md`](references/revit-mcp-study-contribution.md)。
+
 ## 產出物
 
 Skill 會依情境產出不同 artifact：
@@ -287,12 +346,15 @@ Skill 會依情境產出不同 artifact：
 | 需要人決定 | Review packet |
 | 關係與流程複雜 | SVG context / workflow diagram |
 | 多個假設要驗證 | Validation matrix |
+| 有改善想法但不知道怎麼實現 | Capability conversion map |
+| 準備回饋母專案 | Upstream contribution pack |
 
 內建 SVG assets：
 
 - `assets/research-routing-map.svg`
 - `assets/research-navigation-map.svg`
 - `assets/issue-pr-evidence-workflow.svg`
+- `assets/idea-to-upstream-feedback-loop.svg`
 
 這些圖是審查表面，不是工程證據本身。
 
@@ -312,10 +374,12 @@ references/
   research-navigation.md
   research-case-library.md
   response-examples.md
+  revit-mcp-study-contribution.md
 assets/
   research-routing-map.svg
   research-navigation-map.svg
   issue-pr-evidence-workflow.svg
+  idea-to-upstream-feedback-loop.svg
 ```
 
 ## 邊界與限制
@@ -335,13 +399,15 @@ assets/
 
 - Skill entrypoint
 - Codex metadata
-- 9 份 reference
-- 3 份 SVG workflow assets
+- 10 份 reference
+- 4 份 SVG workflow assets
 - 從 `REVIT_MCP_study` 公開 Issues / PRs 萃取的案例邏輯
 - 快速、標準、嚴格三種研究深度
 - 不完整資料整理與證據充分性判斷
 - 流程要求、工具契約、程式防護與實機結果的保證層級
 - 共享或變動狀態下的停止與重新審查條件
+- 從模糊工作構想到能力地圖、最小試驗與可用成果的轉換流程
+- 依母專案最新規則重新查證的 upstream contribution pack 與送出前教學
 
 已做基本結構檢查與安全掃描。`quick_validate.py` 需要本機 Python 環境有 `PyYAML`；若環境缺少 PyYAML，需使用手動 frontmatter、reference link、placeholder、mojibake 與敏感字串掃描替代。
 

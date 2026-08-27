@@ -72,6 +72,13 @@ Correction:
 Learning:
 ```
 
+When the user begins with an improvement idea rather than a technical plan, add a capability conversion map:
+
+| Current work and pain | Desired change | Needed capability | Existing method or tool | Remaining gap or human decision | Smallest reversible trial |
+| --- | --- | --- | --- | --- | --- |
+
+Use `observe`, `compare`, `explain`, `propose`, `execute`, and `verify` only as decision aids. Do not fill the table with product names before the capability and evidence gap are understood. Separate “the Agent can explain a possible path” from “a tool or API can enforce or execute it.”
+
 ## 4. Principle Checks
 
 Apply only the checks that change the decision. Do not turn these into a glossary or a domain-term inventory.
@@ -96,6 +103,13 @@ Apply only the checks that change the decision. Do not turn these into a glossar
 - Name any dependent follow-up target and why it is not the primary target.
 - If no route is defensible, state the evidence needed to choose.
 - If another skill is needed, use the handoff contract in [routing-targets.md](routing-targets.md) and bring the result back to this evidence ledger before making a final route claim.
+
+If the result may be useful to `REVIT_MCP_study`, add an upstream-fit record using [revit-mcp-study-contribution.md](revit-mcp-study-contribution.md):
+
+| Upstream suitability | Suggested route | Official rules checked | Related existing work | Public-safe evidence | Missing proof | Submission boundary |
+| --- | --- | --- | --- | --- | --- | --- |
+
+Record the official source URL and check date or revision. Mark the result `recheck_required` if the current contribution guide, repository instructions, templates, or related work were not inspected in this research round. A draft is not a submitted Issue or Pull Request.
 
 ## 6. Smallest Viable Outcome
 
@@ -142,6 +156,10 @@ For skill behavior reviews, use scenario families rather than keyword checks:
 - a mutation in shared or changing state should stop when ownership, writability, conflict impact, or recovery is unresolved;
 - a successful sample should remain sample-scoped until wider coverage is evidenced;
 - an implementation request should not inherit research authorization for deployment, issue creation, or model mutation.
+- a vague improvement idea should receive a capability conversion map and smallest trial, not a catalogue of AI products;
+- a verified reusable workflow should trigger an upstream-fit check, while private, local-only, or unverified material should not be pushed upstream;
+- an upstream recommendation should be based on freshly checked official contribution rules and related work, not a memorized route;
+- preparing an upstream draft or tutorial should stop before external submission unless the user separately authorizes it.
 
 ## 8. Stop Conditions and Human Decision
 

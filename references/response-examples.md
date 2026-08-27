@@ -115,6 +115,41 @@ Read this reference when the user does not know the right Revit/MCP/BIM vocabula
 
 **Route:** remain at review packet or implementation contract until every required gate is supported. The Skill does not manufacture runtime protection by wording it more strongly.
 
+## Example 8: “我知道這個流程可以改善，但不知道 AI 能幫什麼。”
+
+**First response**
+
+> 你不需要先知道要用哪個 AI、Skill 或 MCP Tool。我會先把你現在怎麼做、最耗力或最容易誤判的地方，以及希望改變的結果整理出來，再判斷需要的是「看見現況、比較差異、解釋原因、提出方案、執行操作」還是「驗證結果」。第一輪先交付一張能力轉換圖和一個不改模型的小測試。
+>
+> 我只需要確認兩件事：這個流程現在從哪個動作開始？你最想先減少的是找資料、重複判斷、操作時間，還是完成後仍不確定？
+
+**Capability conversion map after inspecting the existing workflow**
+
+| Current work | Desired change | Needed capability | Existing coverage | Remaining gap | Smallest trial |
+| --- | --- | --- | --- | --- | --- |
+| Existing command exports a candidate list; a person compares the cases | Make differences visible before deciding what to do | Observe, compare, explain | Preserve the existing command; Gateway can read current identities when connected | The comparison rule and exception owner are not documented | Run one read-only sample and produce a difference table with stable identities |
+| Person decides whether a case is safe to continue | Make the decision repeatable without hiding responsibility | Propose, verify | Experienced review remains the source of judgment | Need an SOP rule, exceptions, and rejection reason | Draft one decision table; have the owner reject or correct it |
+| Correction is performed manually | Evaluate later automation | Execute | No safe interface has been demonstrated | Preview, rollback, readback, and approval are missing | Do not execute; prepare an interface or Issue proposal only after the rule is stable |
+
+**Result and route**
+
+> The first useful result is not a new Tool. It is a read-only comparison plus a corrected decision table. If two or more public-safe cases confirm the pattern, I will check the current `REVIT_MCP_study` guide and related work. A reusable workflow may become a Domain or Skill contribution; a clear missing interface may become an Issue-first proposal. Until then it remains a local research artifact.
+
+**Optional visual:** adapt [`assets/idea-to-upstream-feedback-loop.svg`](../assets/idea-to-upstream-feedback-loop.svg) so the user can see how an idea becomes a trial, evidence, and either a local result or an upstream contribution candidate.
+
+## Example 9: “這套公司流程很好用，直接整理後送回母專案。”
+
+**Boundary response**
+
+> 先不能直接送出。好用是這個公司的在地證據，不代表資料可以公開，也不代表已證明能跨案例重用。我會先分開通用原則、公司專屬內容和仍未驗證的判斷；只有可公開、可重現、符合母專案目前規則的部分才會進入貢獻草稿。
+
+| Check | Current result | Route |
+| --- | --- | --- |
+| Public safety | Model and company details have not been cleared | Keep local; sanitize or obtain authority |
+| Reusability | One local workflow only | Preserve as local SOP; test a second case before a broad claim |
+| Current upstream rules | Not checked in this round | Mark `recheck_required`; inspect official guide and related work |
+| External authorization | User asked for analysis, not a GitHub submission | Prepare draft and tutorial; stop before posting or pushing |
+
 ## Output Minimum by Depth
 
 For a fast case, finish with the finding, its evidence limit, and a next action or stop condition only when needed. For a small standard case, use these four lines:

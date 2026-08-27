@@ -30,6 +30,20 @@ Do not propose a new MCP Tool merely because an Agent is involved. First check f
 
 When a deterministic plugin and an Agent workflow both contribute, assign the plugin the stable operation and assign the Agent context gathering, explanation, exception handling, and handoff. Keep the human as owner of risk tolerance, exceptions, and professional approval.
 
+## Conditional Route Back to REVIT_MCP_study
+
+Assess this route only after the local research has a reviewable result. Re-read the current official repository instructions before every handoff; repository rules can change.
+
+| Result found in the case | Candidate upstream route | Minimum before recommending | Keep local when |
+| --- | --- | --- | --- |
+| A reusable, verified human workflow | Domain SOP or other knowledge contribution allowed by the current guide | Public-safe evidence, duplicate search, trigger, steps, exceptions, validation, limits | It is still a local habit, conflicts with evidence, or exposes private project material |
+| A reusable lesson across several cases | Lessons or knowledge route allowed by the current guide | Cross-case evidence and a claim scoped to tested coverage | It is a single anecdote or only a proposed principle |
+| Agent orchestration that fits the repository's existing tools and current Skill rules | Skill contribution candidate | Independent trigger, output contract, stop conditions, tested scenarios, no hidden tool dependency | It duplicates an existing Skill or only adds terminology |
+| A clear missing interface, defect, or core-code change | Issue-first proposal unless the current guide or a maintainer explicitly permits another path | Repository/version, use case or reproduction, evidence, expected behavior, acceptance criteria, exclusions | The capability or ownership is unresolved |
+| A question, showcase, or early idea | Discussion or other route named by the current repository | Concise context, what was tried, and the decision requested | It contains confidential evidence or has an actionable defect better suited to an Issue |
+
+Do not equate “useful to the community” with “ready to submit.” Use [revit-mcp-study-contribution.md](revit-mcp-study-contribution.md) to build the handoff and teach the user how to submit. A maintainer's explicit exception must be preserved as evidence and followed within its exact scope.
+
 ## Skill Suite Routing
 
 Use one research entry plus specialist follow-ups when the work naturally changes mode. The research output should hand off only the bounded subtask, then bring the result back into the evidence ledger.

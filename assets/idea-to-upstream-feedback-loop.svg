@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">從工作構想到 REVIT_MCP_study 回饋的研究循環</title>
+  <desc id="desc">把不清楚的工作改善想法轉成能力需求、最小試驗與證據，再決定保留在本地或準備 Issue、知識、Skill、Discussion 貢獻。所有外部提交前都需要重新檢查官方規則與使用者授權。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#334155"/>
+    </marker>
+    <style>
+      text { font-family: "Segoe UI", "Noto Sans TC", sans-serif; fill: #172033; }
+      .title { font-size: 28px; font-weight: 700; }
+      .subtitle { font-size: 14px; fill: #475569; }
+      .node-title { font-size: 17px; font-weight: 700; }
+      .node-text { font-size: 13px; fill: #334155; }
+      .label { font-size: 12px; font-weight: 600; fill: #334155; }
+      .box { stroke: #334155; stroke-width: 1.5; rx: 14; }
+      .evidence { fill: #e8f5ee; }
+      .decision { fill: #fff5db; }
+      .action { fill: #eaf2ff; }
+      .stop { fill: #fff0f0; }
+      .route { fill: #f1ecff; }
+      .line { fill: none; stroke: #334155; stroke-width: 2; marker-end: url(#arrow); }
+      .dash { stroke-dasharray: 7 6; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="760" fill="#f8fafc"/>
+  <text class="title" x="60" y="52">從「我有想法，但不知道怎麼做」到可交付成果</text>
+  <text class="subtitle" x="60" y="78">先翻譯工作能力，再選工具；先做最小試驗，再決定是否回饋 REVIT_MCP_study。</text>
+
+  <rect class="box action" x="60" y="120" width="210" height="112"/>
+  <text class="node-title" x="80" y="151">1. 既有工作與困擾</text>
+  <text class="node-text" x="80" y="178">人、外掛、SOP 現在怎麼做？</text>
+  <text class="node-text" x="80" y="200">最耗力、最常誤判的是什麼？</text>
+
+  <rect class="box action" x="330" y="120" width="230" height="112"/>
+  <text class="node-title" x="350" y="151">2. 能力轉換</text>
+  <text class="node-text" x="350" y="178">看見・比較・解釋・提出</text>
+  <text class="node-text" x="350" y="200">執行・驗證（不先選產品）</text>
+
+  <rect class="box decision" x="620" y="120" width="230" height="112"/>
+  <text class="node-title" x="640" y="151">3. 已有方法能否支援？</text>
+  <text class="node-text" x="640" y="178">既有工具、Gateway、文件</text>
+  <text class="node-text" x="640" y="200">官方 API 或人工判斷</text>
+
+  <rect class="box action" x="910" y="120" width="230" height="112"/>
+  <text class="node-title" x="930" y="151">4. 最小可逆試驗</text>
+  <text class="node-text" x="930" y="178">只讀樣本、比較、預覽</text>
+  <text class="node-text" x="930" y="200">草案或拋棄式原型</text>
+
+  <path class="line" d="M270 176 H322"/>
+  <path class="line" d="M560 176 H612"/>
+  <path class="line" d="M850 176 H902"/>
+
+  <rect class="box evidence" x="910" y="300" width="230" height="112"/>
+  <text class="node-title" x="930" y="331">5. 證據與限制</text>
+  <text class="node-text" x="930" y="358">實際證明到哪一層？</text>
+  <text class="node-text" x="930" y="380">反例、責任與停止條件</text>
+  <path class="line" d="M1025 232 V292"/>
+
+  <rect class="box decision" x="620" y="300" width="230" height="112"/>
+  <text class="node-title" x="640" y="331">6. 適合回饋母專案？</text>
+  <text class="node-text" x="640" y="358">可重用、已驗證、可公開</text>
+  <text class="node-text" x="640" y="380">無重複、範圍可維護</text>
+  <path class="line" d="M910 356 H858"/>
+
+  <rect class="box stop" x="60" y="300" width="500" height="112"/>
+  <text class="node-title" x="80" y="331">保留在本地／停止</text>
+  <text class="node-text" x="80" y="358">私有資料、單一案例、證據不足、專業責任或未解衝突</text>
+  <text class="node-text" x="80" y="380">產出：本地 SOP、研究備忘錄、人工審查包或下一個只讀測試</text>
+  <path class="line" d="M620 356 H568"/>
+  <text class="label" x="575" y="342">否</text>
+
+  <rect class="box route" x="620" y="480" width="520" height="144"/>
+  <text class="node-title" x="640" y="511">7. 重新檢查官方規則後準備貢獻包</text>
+  <text class="node-text" x="640" y="538">Issue：缺介面、缺陷或核心程式建議</text>
+  <text class="node-text" x="640" y="560">知識／Domain：已驗證且可重複的工作方法</text>
+  <text class="node-text" x="640" y="582">Skill：可重用的 Agent 協作流程　 Discussion：問題或早期探索</text>
+  <text class="node-text" x="640" y="604">草稿與教學 ≠ 已提交；外部動作需使用者另行授權</text>
+  <path class="line" d="M735 412 V472"/>
+  <text class="label" x="747" y="449">是</text>
+
+  <rect class="box evidence" x="60" y="480" width="500" height="144"/>
+  <text class="node-title" x="80" y="511">維護者回饋成為下一輪研究證據</text>
+  <text class="node-text" x="80" y="538">回覆、審查或合併只證明對應層級，不等於部署或模型正確</text>
+  <text class="node-text" x="80" y="560">保留接受、拒絕、限制、替代路徑與重新啟動條件</text>
+  <text class="node-text" x="80" y="582">更新能力地圖、SOP、Skill 或下一個最小試驗</text>
+  <path class="line" d="M620 552 H568"/>
+  <path class="line dash" d="M180 480 V445 H445 V240"/>
+
+  <rect x="60" y="674" width="1080" height="54" rx="10" fill="#ffffff" stroke="#94a3b8"/>
+  <text class="node-text" x="80" y="696"><tspan font-weight="700">這張圖可以證明：</tspan>研究與交付需要通過哪些決策門。</text>
+  <text class="node-text" x="80" y="717"><tspan font-weight="700">這張圖不能證明：</tspan>任何特定 API 可用、功能已完成、模型已安全修改，或母專案會接受貢獻。</text>
+</svg>
